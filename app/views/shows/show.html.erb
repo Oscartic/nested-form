@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-12">
+    <h2><strong>Name:</strong>
+      <%= @show.name %></h2>
+  </div>
+  <div class="w-100"></div>
+  <div class="col-6">
+    <% @show.seasons.each do |season| %>
+      <strong>Temporada  <%= season.number %></strong>
+    <% end %>
+    <hr>
+    <% @show.episodes.each do |episode| %>
+      <p>Capitulo: <%= episode.title %></p>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'Edit', edit_show_path(@show), class: 'btn btn-primary' %> |
+<%= link_to 'Back', shows_path, class: 'btn btn-secondary' %>
